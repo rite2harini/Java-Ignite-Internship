@@ -1,13 +1,26 @@
-/*
-Easy 2 – Employee Salary Analyzer
+import java.util.Scanner;
 
-Create a program that:
+public class EmployeeSalaryAnalyzer {
+    public static void main(String[] args) {
 
-Stores salaries of 5 employees in an array
-Calculate and display:
-Total Salary
-Average Salary
-Hint
+        Scanner sc = new Scanner(System.in);
 
-Use a loop and a sum variable.
-  */
+        int[] salary = new int[5];
+        int totalSalary = 0;
+
+        System.out.println("Enter salaries of 5 employees:");
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Employee " + (i + 1) + " Salary: ");
+            salary[i] = sc.nextInt();
+            totalSalary += salary[i];
+        }
+
+        double averageSalary = (double) totalSalary / 5;
+
+        System.out.println("Total Salary: " + totalSalary);
+        System.out.println("Average Salary: " + averageSalary);
+
+        sc.close();
+    }
+}
