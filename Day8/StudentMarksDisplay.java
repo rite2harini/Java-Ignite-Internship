@@ -13,3 +13,24 @@ Student Marks:
 82
 55
   */
+import java.util.Scanner;
+public class Student_Marks_Display 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int marks[] = new int[5];
+        System.out.println("Enter the marks of 5 students ");
+        for(int i=0;i<5;i++)
+        {
+            marks[i] = sc.nextInt();
+        }
+        System.out.println("Students Marks :");
+        for(int i=0; i<5;i++)
+        {
+            System.out.println(marks[i]);
+        }
+    }
+    
+}
+
