@@ -1,16 +1,24 @@
-/*
-1. Attendance Tracker (Medium)
+public class Attendancetracker {
+	public static void main(String[] args) {
 
-A class has attendance records for 10 students.
+        int[] attendance = {1, 0, 1, 1, 0, 1, 1, 1, 0, 1};
 
-Store attendance as:
+        int present = 0;
+        int absent = 0;
 
-1 = Present
-0 = Absent
+        for (int i = 0; i < attendance.length; i++) {
+            if (attendance[i] == 1) {
+                present++;
+            } else {
+                absent++;
+            }
+        }
 
-Calculate:
+        double attendancePercentage =
+                (double) present / attendance.length * 100;
 
-Total Present Students
-Total Absent Students
-Attendance Percentage
-*/
+        System.out.println("Total Present Students: " + present);
+        System.out.println("Total Absent Students: " + absent);
+        System.out.println("Attendance Percentage: " + attendancePercentage + "%");
+    }
+}

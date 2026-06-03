@@ -1,22 +1,44 @@
-/*
-Advanced – Company Sales Dashboard (2D Array)
+import java.util.Scanner;
+public class CompanySalesDashboard {
+	
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
 
-Create a program that:
+	        int[][] sales = new int[3][4];
+	        int overallSales = 0;
+	        int highestSales = 0;
+	        int topBranch = 0;
 
-A company has sales data for 3 branches and 4 months.
+	      
+	        for (int i = 0; i < 3; i++) {
+	            System.out.println("Enter sales for Branch " + (i + 1) + ":");
+	            for (int j = 0; j < 4; j++) {
+	                System.out.print("Month " + (j + 1) + ": ");
+	                sales[i][j] = sc.nextInt();
+	            }
+	        }
 
-Store the sales data in a 2D array.
+	   
+	        for (int i = 0; i < 3; i++) {
+	            int branchTotal = 0;
 
-Calculate:
+	            for (int j = 0; j < 4; j++) {
+	                branchTotal += sales[i][j];
+	            }
 
-Total sales of each branch
-Overall company sales
-Branch with the highest total sales
-Example Structure
-Branch 1 -> Jan Feb Mar Apr
-Branch 2 -> Jan Feb Mar Apr
-Branch 3 -> Jan Feb Mar Apr
-Hint
+	            System.out.println("Total Sales of Branch " + (i + 1) + ": " + branchTotal);
 
-Use nested loops.
-*/
+	            overallSales += branchTotal;
+
+	            if (branchTotal > highestSales) {
+	                highestSales = branchTotal;
+	                topBranch = i + 1;
+	            }
+	        }
+
+	        System.out.println("Overall Company Sales: " + overallSales);
+	        System.out.println("Branch with Highest Sales: Branch " + topBranch);
+
+	        sc.close();
+	    }
+	}

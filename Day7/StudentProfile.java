@@ -1,19 +1,26 @@
-/*
-(EASY)
-Create a class Student:
+public class Student {
+	String name;
+    int age;
+    private int marks;
 
-Requirements:
-name
-age
-marks
-Tasks:
-Initialize using constructor
-Create 2 student objects
-Display student details using method
-Twist:
+    Student(String name, int age, int marks) {
+        this.name = name;
+        this.age = age;
+        this.marks = marks;
+    }
 
-Marks should not be accessed directly.
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Marks: " + marks);
+        System.out.println();
+    }
+    public static void main(String[] args) {
 
-Write your code below
-----------------------------------------
-*/
+        Student s1 = new Student("Anju", 20, 85);
+        Student s2 = new Student("Rahul", 21, 92);
+
+        s1.display();
+        s2.display();
+    }
+}
