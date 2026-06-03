@@ -1,22 +1,32 @@
-/*
-Consecutive Increase Checker 
+import java.util.Scanner;
 
-Store 5 numbers in an array.
+public class ConsecutiveIncreaseChecker {
+    public static void main(String[] args) {
 
-Determine whether the numbers are in strictly increasing order.
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[5];
 
-Example
-10 20 30 40 50
+        System.out.println("Enter 5 numbers:");
 
-Output:
+        for (int i = 0; i < 5; i++) {
+            arr[i] = sc.nextInt();
+        }
 
-Array is in increasing order
+        boolean increasing = true;
 
-Example:
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] >= arr[i + 1]) {
+                increasing = false;
+                break;
+            }
+        }
 
-10 20 15 40 50
+        if (increasing) {
+            System.out.println("Array is in increasing order");
+        } else {
+            System.out.println("Array is NOT in increasing order");
+        }
 
-Output:
-
-Array is NOT in increasing order
-  */
+        sc.close();
+    }
+}
