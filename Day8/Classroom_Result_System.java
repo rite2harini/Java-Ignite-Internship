@@ -1,13 +1,25 @@
-/*
-Medium – Classroom Result System
+import java.uti.Scanner;
+public class ClassroomResultSystem {
+    public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+        int[] marks = new int[10];
+System.out.println("Enter marks of 10 students");
+      for(int i=0;i<10;i++)
+        {
+          marks[i]=sc.nextInt();
+        }
+        int passed = 0;
+        int failed = 0;
 
-Create a program that:
+        for (int i = 0; i < marks.length; i++) {
+            if (marks[i] >= 35) {
+                passed++;
+            } else {
+                failed++;
+            }
+        }
 
-Stores marks of 10 students in an array
-Count:
-Number of students who passed (marks >= 35)
-Number of students who failed (marks < 35)
-Output Example
-Passed Students: 7
-Failed Students: 3
-*/
+        System.out.println("Passed Students: " + passed);
+        System.out.println("Failed Students: " + failed);
+    }
+}
