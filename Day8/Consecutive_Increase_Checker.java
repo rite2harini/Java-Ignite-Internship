@@ -20,3 +20,22 @@ Output:
 
 Array is NOT in increasing order
   */
+public class IncreaseChecker {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        boolean isIncreasing = true;
+
+        for (int i = 0; i < numbers.length - 1; i++) {
+            if (numbers[i] >= numbers[i + 1]) {
+                isIncreasing = false;
+                break;
+            }
+        }
+
+        if (isIncreasing) {
+            System.out.println("Array is in increasing order");
+        } else {
+            System.out.println("Array is NOT in increasing order");
+        }
+    }
+}
