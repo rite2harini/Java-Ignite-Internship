@@ -13,3 +13,17 @@ Student Marks:
 82
 55
   */
+public class StudentMarksDisplay {
+
+    public static void main(String[] args) {
+
+        int[] marks = {78, 65, 90, 82, 55};
+
+        System.out.println("Student Marks:");
+
+        for (int i = 0; i < 5; i++) {
+
+            System.out.println(marks[i]);
+        }
+    }
+}
