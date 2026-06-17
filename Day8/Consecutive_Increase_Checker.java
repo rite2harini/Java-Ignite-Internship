@@ -1,22 +1,25 @@
-/*
-Consecutive Increase Checker 
+public class ConsecutiveIncreaseChecker {
+	
 
-Store 5 numbers in an array.
+	    public static void main(String[] args) {
 
-Determine whether the numbers are in strictly increasing order.
+	        int[] arr = {10, 20, 30, 40, 50};
 
-Example
-10 20 30 40 50
+	        boolean increasing = true;
 
-Output:
+	        for(int i = 0; i < arr.length - 1; i++) {
 
-Array is in increasing order
+	            if(arr[i] >= arr[i + 1]) {
+	                increasing = false;
+	                break;
+	            }
+	        }
 
-Example:
+	        if(increasing)
+	            System.out.println("Array is in increasing order");
+	        else
+	            System.out.println("Array is not in increasing order");
+	    }
+	}
 
-10 20 15 40 50
 
-Output:
-
-Array is NOT in increasing order
-  */

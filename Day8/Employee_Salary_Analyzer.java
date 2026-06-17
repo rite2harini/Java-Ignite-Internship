@@ -1,13 +1,21 @@
-/*
-Easy 2 – Employee Salary Analyzer
+public class EmployeeSalaryAnalyzer {
 
-Create a program that:
 
-Stores salaries of 5 employees in an array
-Calculate and display:
-Total Salary
-Average Salary
-Hint
+	    public static void main(String[] args) {
 
-Use a loop and a sum variable.
-  */
+	        String empName = "krish";
+	        double basicSalary = 30000;
+
+	        double hra = basicSalary * 0.20;
+	        double da = basicSalary * 0.10;
+	        double grossSalary = basicSalary + hra + da;
+
+	        System.out.println("Employee : " + empName);
+	        System.out.println("Basic Salary : " + basicSalary);
+	        System.out.println("HRA : " + hra);
+	        System.out.println("DA : " + da);
+	        System.out.println("Gross Salary : " + grossSalary);
+	    }
+	}
+
+

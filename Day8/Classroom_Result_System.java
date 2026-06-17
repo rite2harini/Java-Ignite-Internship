@@ -1,13 +1,26 @@
-/*
-Medium – Classroom Result System
+public class ClassroomResultSystem {
 
-Create a program that:
+	    public static void main(String[] args) {
 
-Stores marks of 10 students in an array
-Count:
-Number of students who passed (marks >= 35)
-Number of students who failed (marks < 35)
-Output Example
-Passed Students: 7
-Failed Students: 3
-*/
+	        String studentName = "Sumi";
+	        int marks = 82;
+
+	        System.out.println("Student Name : " + studentName);
+	        System.out.println("Marks : " + marks);
+
+	        if(marks >= 90)
+	            System.out.println("Grade A+");
+	        else if(marks >= 80)
+	            System.out.println("Grade A");
+	        else if(marks >= 70)
+	            System.out.println("Grade B");
+	        else if(marks >= 60)
+	            System.out.println("Grade C");
+	        else if(marks >= 40)
+	            System.out.println("Grade D");
+	        else
+	            System.out.println("Fail");
+	    }
+	}
+
+

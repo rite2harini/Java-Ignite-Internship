@@ -1,16 +1,22 @@
-/*
-1. Attendance Tracker (Medium)
+public class AttendanceTracker {
 
-A class has attendance records for 10 students.
+	    public static void main(String[] args) {
 
-Store attendance as:
+	        String studentName = "Sumi";
+	        int totalClasses = 120;
+	        int attendedClasses = 95;
 
-1 = Present
-0 = Absent
+	        double attendance =
+	                (attendedClasses * 100.0) / totalClasses;
 
-Calculate:
+	        System.out.println("Student : " + studentName);
+	        System.out.println("Attendance : " + attendance + "%");
 
-Total Present Students
-Total Absent Students
-Attendance Percentage
-*/
+	        if(attendance >= 75)
+	            System.out.println("Eligible for Exam");
+	        else
+	            System.out.println("Not Eligible for Exam");
+	    }
+	}
+
+

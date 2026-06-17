@@ -1,22 +1,26 @@
-/*
-Advanced – Company Sales Dashboard (2D Array)
+public class CompanySalesDshboard {
+	
 
-Create a program that:
+	    public static void main(String[] args) {
 
-A company has sales data for 3 branches and 4 months.
+	        double jan = 25000;
+	        double feb = 30000;
+	        double mar = 35000;
 
-Store the sales data in a 2D array.
+	        double total = jan + feb + mar;
+	        double average = total / 3;
 
-Calculate:
+	        System.out.println("January Sales : " + jan);
+	        System.out.println("February Sales : " + feb);
+	        System.out.println("March Sales : " + mar);
 
-Total sales of each branch
-Overall company sales
-Branch with the highest total sales
-Example Structure
-Branch 1 -> Jan Feb Mar Apr
-Branch 2 -> Jan Feb Mar Apr
-Branch 3 -> Jan Feb Mar Apr
-Hint
+	        System.out.println("Total Sales : " + total);
+	        System.out.println("Average Sales : " + average);
 
-Use nested loops.
-*/
+	        if(average >= 30000)
+	            System.out.println("Good Performance");
+	        else
+	            System.out.println("Needs Improvement");
+	    }
+	}
+
