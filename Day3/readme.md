@@ -1,157 +1,135 @@
-1)Employee Bonus Eligibility Checker
-   Problem Statement:
+1.import java.util.Scanner;
 
-A company gives bonus based on the following conditions:
+public class BonusChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-Employee must have worked for more than 3 years
-AND attendance percentage should be above 85
-If performance rating is:
-5 → Bonus = ₹50,000
-4 → Bonus = ₹30,000
-3 → Bonus = ₹10,000
-Otherwise no bonus.
+        // Input section
+        System.out.print("Enter years of experience: ");
+        double years = scanner.nextDouble();
 
-But there’s a twist:
+        System.out.print("Enter attendance percentage: ");
+        double attendance = scanner.nextDouble();
 
-If the employee has attendance below 60%, bonus should be rejected immediately even if all other conditions are satisfied.
-Input:
-Years of experience
-Attendance %
-Performance rating
-Output:
+        System.out.print("Enter performance rating (1-5): ");
+        int rating = scanner.nextInt();
 
-Display:
+        // Evaluation logic
+        if (attendance < 60) {
+            System.out.println("Not Eligible");
+            System.out.println("Bonus Amount: ₹0 (Reason: Attendance below 60%)");
+        } else if (years > 3 && attendance > 85) {
+            int bonus = 0;
 
-Eligible / Not Eligible
-Bonus amount if eligible
+            switch (rating) {
+                case 5:
+                    bonus = 50000;
+                    break;
+                case 4:
+                    bonus = 30000;
+                    break;
+                case 3:
+                    bonus = 10000;
+                    break;
+                default:
+                    bonus = 0;
+                    break;
+            }
 
+            if (bonus > 0) {
+                System.out.println("Eligible");
+                System.out.println("Bonus Amount: ₹" + bonus);
+            } else {
+                System.out.println("Not Eligible");
+                System.out.println("Bonus Amount: ₹0 (Reason: Performance rating too low)");
+            }
+        } else {
+            System.out.println("Not Eligible");
+            System.out.println("Bonus Amount: ₹0 (Reason: Did not meet experience or attendance criteria)");
+        }
 
+        scanner.close();
+    }
+}
 
-2)Smart Login System
-Problem Statement:
+2.import java.util.Scanner;
 
-Create a login system with:
+public class SmartLogin {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        String correctUsername = "admin";
+        String correctPassword = "Java@123";
+        int attempts = 0;
 
-Username
-Password
-OTP
+        while (attempts < 3) {
+            System.out.print("Enter Username: ");
+            String username = scanner.next();
 
-Conditions:
+            System.out.print("Enter Password: ");
+            String password = scanner.next();
 
-Username must be "admin"
-Password must be "Java@123"
-If username/password correct:
+            if (username.equals(correctUsername) && password.equals(correctPassword)) {
+                // Username and password correct, check OTP
+                System.out.print("Enter 4-digit OTP: ");
+                int otp = scanner.nextInt();
 
-Ask for OTP
-OTP valid only if between 1000 and 9999
+                if (otp >= 1000 && otp <= 9999) {
+                    System.out.println("Login Successful!");
+                } else {
+                    System.out.println("Invalid OTP. Login Failed.");
+                }
+                break; // Break the while loop since credentials were correct
+            } else {
+                attempts++;
+                System.out.println("Incorrect credentials.");
 
-Twist:
+                // Extra twist hint checking
+                if (username.equals(correctUsername) && password.startsWith("Java") && password.endsWith("123")) {
+                    System.out.println("Almost correct password");
+                }
 
-If password is wrong 3 times, print:
-"Account Blocked"
+                if (attempts == 3) {
+                    System.out.println("Account Blocked");
+                }
+            }
+        }
 
-Extra twist:
+        scanner.close();
+    }
+}
+3.print("--- Electricity Bill Generator ---")
+print("1. Domestic")
+print("2. Commercial")
+print("3. Industrial")
+choice = input("Select connection type (1-3 or name): ").strip().lower()
 
-If username is correct but password starts with "Java" and ends with "123" but still incorrect, print:
-"Almost correct password"
+if choice in ['1', 'domestic', '2', 'commercial', '3', 'industrial']:
+    units = float(input("Enter units consumed: "))
+    bill = 0.0
 
+    if choice == '1' or choice == 'domestic':
+        if units <= 100:
+            bill = 0
+        elif units <= 300:
+            bill = (units - 100) * 5
+        else:
+            bill = (200 * 5) + ((units - 300) * 8)
+            
+    elif choice == '2' or choice == 'commercial':
+        if units < 200:
+            bill = units * 10
+        else:
+            bill = units * 15
+            
+    elif choice == '3' or choice == 'industrial':
+        pf_input = input("Is power factor good? (yes/no): ").strip().lower()
+        base_charge = units * 20
+        if units > 500 and pf_input == 'yes':
+            bill = base_charge * 0.90 # 10% discount applied
+        else:
+            bill = base_charge
 
-
-
-3)Electricity Bill Generator
-Problem Statement:
-
-Create a menu-driven electricity billing system.
-
-Menu:
-Domestic
-Commercial
-Industrial
-
-Take units consumed.
-
-Conditions:
-Domestic:
-First 100 units → free
-101–300 → ₹5/unit
-Above 300 → ₹8/unit
-Commercial:
-Below 200 → ₹10/unit
-Above 200 → ₹15/unit
-Industrial:
-If units > 500 AND power factor good:
-10% discount
-Otherwise normal charge ₹20/unit
-Twist:
-If invalid menu entered:
-
-print "Invalid Connection Type"
-
-4)College Admission Predictor
-
-Problem Statement:
-
-A student is eligible for admission only if:
-
-Maths >= 70
-Physics >= 60
-Chemistry >= 60
-
-OR
-
-Total average >= 80
-
-But:
-
-If any subject mark is below 35 → Automatically rejected.
-
-Extra twist:
-
-If all three subjects are above 90:
-"Eligible for Scholarship"
-Input:
-Maths
-Physics
-Chemistry
-Output:
-Admission status
-Scholarship status
-
-
-
-
-5)Restaurant Ordering System (Advanced Menu Driven)
-
-Problem Statement:
-
-Create a restaurant ordering system.
-
-Main Menu:
-Veg
-Non-Veg
-Veg Menu:
-1 → Fried Rice
-2 → Noodles
-Non-Veg Menu:
-1 → Chicken Biryani
-2 → Grill Chicken
-
-Take:
-
-Quantity
-Member status (Gold/Silver/Normal)
-Discount Rules:
-Gold → 20%
-Silver → 10%
-Normal → No discount
-
-Twist:
-
-If bill > ₹2000 AND customer is Gold:
-Give free dessert message.
-
-Extra Twist:
-
-Invalid menu choices should print:
-"Invalid Selection"
-
+    print(f"Total Electricity Bill: ₹{bill:.2f}")
+else:
+    print("Invalid Connection Type")
